@@ -110,7 +110,7 @@ async function main() {
         // One artifact or all if `name` input is not specified.
         if (name) {
             artifacts = artifacts.filter((artifact) => {
-                return artifact.name == name
+                return artifact.name.includes(name)
             })
         }
 
