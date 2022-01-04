@@ -12,6 +12,10 @@ async function main() {
         const [owner, repo] = core.getInput("repo", { required: true }).split("/")
         const path = core.getInput("path", { required: true })
         const name = core.getInput("name")
+        
+        // Set path to unpacked binary
+        core.exportVariable('TOOL_PATH', `./${name}`)
+        
         let workflowConclusion = core.getInput("workflow_conclusion")
         let pr = core.getInput("pr")
         let commit = core.getInput("commit")
