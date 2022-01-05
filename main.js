@@ -14,7 +14,7 @@ async function main() {
         const name = core.getInput("name")
         
         // Set path to unpacked binary
-        core.exportVariable('TOOL_PATH', `./${name}`)
+        core.exportVariable('TOOL_PATH', `${process.env.PWD}/${name}`)
         
         let workflowConclusion = core.getInput("workflow_conclusion")
         let pr = core.getInput("pr")
